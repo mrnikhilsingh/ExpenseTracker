@@ -1,17 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Nunito:wght@300;400;600;700;800;900&family=Russo+One&family=Spartan:wght@700;800;900&display=swap");
 
-body {
-  font-family: "Nunito", sans-serif;
-  margin: 0 32px;
-}
-
-main {
-  max-width: 900px;
-  margin-inline: auto;
-}
-
 * {
   box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
 }
 
 .expense-tracker {
@@ -29,19 +20,20 @@ main {
   align-self: flex-start;
 }
 
-.expense-table select {
-  font: inherit;
-  width: 100%;
-  border: none;
-  outline: none;
-}
-
-.amount-column div {
+#title,
+#amount {
   display: flex;
+  flex-wrap: wrap;
 }
 
+#sorting-arrows {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.title-column span,
 .amount-column span {
-  margin-right: 6px;
+  margin-right: 16px;
 }
 
 .arrow {
@@ -49,83 +41,35 @@ main {
   cursor: pointer;
 }
 
-.up-arrow {
-  margin-left: auto;
-}
-
-.up-arrow:active {
-  transform: translateY(-2px);
-}
-
 .down-arrow {
   margin-left: 6px;
 }
 
-.down-arrow:active {
-  transform: translateY(2px);
-}
-
-.expense-table th,
-.expense-table td {
-  border: 1px solid #444;
-  text-align: left;
-  padding: 4px 8px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 12px;
-}
-
-.input-container label {
-  font-size: 14px;
-}
-
-.input-container input {
-  height: 28px;
-  font-family: inherit;
-}
-
-.input-container select {
-  height: 28px;
-  font: inherit;
-}
-
 .add-btn {
   width: 100%;
-  height: 32px;
-  font-size: 18px;
-  font-family: inherit;
-  margin-top: 8px;
+  margin-top: 16px;
 }
 
-.context-menu {
-  background-color: white;
-  border: 1px solid;
-  position: absolute;
-  /* display: none; */
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+#category select {
+  min-width: 100px;
 }
 
-.context-menu div {
-  padding: 2px 8px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-.context-menu div:hover {
-  background-color: #ddd;
+.copyright-text {
+  text-align: center;
+  margin-top: 32px;
+  color: #a0a0a0;
+  font-size: 12px;
 }
 
 @media (max-width: 900px) {
-  body {
-    margin-inline: 16px;
-  }
-
   .expense-tracker {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 450px) {
+  .title-column span,
+  .amount-column span {
+    margin-right: 0;
   }
 }

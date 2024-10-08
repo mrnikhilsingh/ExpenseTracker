@@ -12,13 +12,27 @@ function App() {
     amount: "",
   });
   return (
-    <main>
-      <h1>Track Your Expense</h1>
-      <div className="expense-tracker">
-        <Form expenses={expenses} setExpenses={setExpenses} formData={formData} setFormData={setFormData} />
-        <ItemsTable expenses={expenses} setExpenses={setExpenses} setFormData={setFormData} />
-      </div>
-    </main>
+    <>
+      <main>
+        <h1>Track Your Expense</h1>
+        <div className="expense-tracker">
+          <Form
+            expenses={expenses}
+            setExpenses={setExpenses}
+            formData={formData}
+            setFormData={setFormData}
+          />
+          <ItemsTable
+            expenses={expenses}
+            setExpenses={setExpenses}
+            setFormData={setFormData}
+          />
+        </div>
+      </main>
+      <p className="copyright-text">
+        <i> 2024 Made with ❤ by Nikhil Singh</i>
+      </p>
+    </>
   );
 }
 
